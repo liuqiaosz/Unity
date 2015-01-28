@@ -1,0 +1,18 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="UnityFramework\Framework\Network\SocketProcess.cs">
+    <Files>
+      <File FileName="d:\UnityPrj\UnityFramework\UnityFramework\Framework\Notification\NotificationManager.cs" Line="73" Column="4" />
+      <File FileName="UnityFramework\Framework\Notification\NotificationArg.cs" Line="27" Column="1" />
+      <File FileName="UnityFramework\Framework\Network\NetworkManager.cs" Line="43" Column="13" />
+      <File FileName="UnityFramework\Framework\Network\IDataParser.cs" Line="7" Column="27" />
+      <File FileName="UnityFramework\Framework\Network\NetworkEnum.cs" Line="17" Column="6" />
+      <File FileName="UnityFramework\Framework\Network\SocketProcess.cs" Line="74" Column="5" />
+      <File FileName="UnityFramework\Framework\Misc\IDispose.cs" Line="8" Column="18" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

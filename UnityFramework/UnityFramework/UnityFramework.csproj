@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AE43D434-1933-4607-894D-516861DC3BC1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>UnityFramework</RootNamespace>
+    <AssemblyName>UnityFramework</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="Unity.SerializationLogic">
+      <HintPath>..\..\..\..\..\Unity\Editor\Data\Managed\Unity.SerializationLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>..\..\..\..\..\Unity\Editor\Data\Managed\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>..\..\..\..\..\Unity\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\Unity\Editor\Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Engine\Core\UnityFramework.cs" />
+    <Compile Include="Engine\Scene\Scene.cs" />
+    <Compile Include="Engine\Mgr\SceneManager.cs" />
+    <Compile Include="Engine\Mgr\UIManager.cs" />
+    <Compile Include="Engine\Utils\UtilTools.cs" />
+    <Compile Include="Kits\CameraFollow.cs" />
+    <Compile Include="Misc\Pool\IPoolable.cs" />
+    <Compile Include="Network\HTTPNetwork.cs" />
+    <Compile Include="Network\HTTPRequest.cs" />
+    <Compile Include="Network\NetData.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Network\NetworkEnum.cs" />
+    <Compile Include="Network\ParserGeneric.cs" />
+    <Compile Include="Network\TcpDataParserGeneric.cs" />
+    <Compile Include="Notification\NotificationManager.cs" />
+    <Compile Include="Notification\NotificationArg.cs" />
+    <Compile Include="Network\IDataParser.cs" />
+    <Compile Include="Network\TcpNetwork.cs" />
+    <Compile Include="Utils\LzmaTools.cs" />
+    <Compile Include="Misc\Pool\ObjectPool.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Engine\UI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj">
+      <Project>{621bb30f-a048-4c14-bbec-7fe8773e24b6}</Project>
+      <Name>CommonLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
