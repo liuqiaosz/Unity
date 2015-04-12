@@ -54,3 +54,17 @@ D:\WebyunSync\53663922\UnityPrj\UnityFramework\FrameworkTest\bin\Debug\UnityEngi
 D:\WebyunSync\53663922\UnityPrj\UnityFramework\FrameworkTest\bin\Debug\UnityFramework.dll
 D:\WebyunSync\53663922\UnityPrj\UnityFramework\FrameworkTest\bin\Debug\CommonLibrary.pdb
 D:\WebyunSync\53663922\UnityPrj\UnityFramework\FrameworkTest\bin\Debug\UnityFramework.pdb
+D:\Github\Unity\UnityFramework\FrameworkTest\bin\Debug\FrameworkTest.exe.config
+D:\Github\Unity\UnityFramework\FrameworkTest\obj\Debug\FrameworkTest.exe
+D:\Github\Unity\UnityFramework\FrameworkTest\obj\Debug\FrameworkTest.pdb
+D:\Github\Unity\UnityFramework\FrameworkTest\bin\Debug\FrameworkTest.exe
+D:\Github\Unity\UnityFramework\FrameworkTest\bin\Debug\FrameworkTest.pdb
+D:\Github\Unity\UnityFramework\FrameworkTest\bin\Debug\CommonLibrary.dll
+D:\Github\Unity\UnityFramework\FrameworkTest\bin\Debug\UnityEngine.dll
+D:\Github\Unity\UnityFramework\FrameworkTest\bin\Debug\UnityFramework.dll
+D:\Github\Unity\UnityFramework\FrameworkTest\bin\Debug\CommonLibrary.pdb
+D:\Github\Unity\UnityFramework\FrameworkTest\bin\Debug\UnityFramework.pdb
+D:\Github\Unity\UnityFramework\FrameworkTest\obj\Debug\FrameworkTest.csprojResolveAssemblyReference.cache
+D:\Github\Unity\UnityFramework\FrameworkTest\obj\Debug\FrameworkTest.Form1.resources
+D:\Github\Unity\UnityFramework\FrameworkTest\obj\Debug\FrameworkTest.Properties.Resources.resources
+D:\Github\Unity\UnityFramework\FrameworkTest\obj\Debug\FrameworkTest.csproj.GenerateResource.Cache

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using UnityEngine;
 using UnityEditor;
@@ -34,7 +34,8 @@ namespace Editor
          **/
         public bool IsImportUIAsset(string ImportPath)
         {
-            return (ImportPath.IndexOf(EditorSetting.GetInstance().SettingUI.AssetPathRoot) == 0);
+            //return (ImportPath.IndexOf(EditorSetting.GetInstance().SettingUI.AssetPathRoot) == 0);
+            return false;
         }
 
         /**
@@ -44,6 +45,7 @@ namespace Editor
          **/
         public void SetUIAssetSetting(TextureImporter Importer, string ImportPath)
         {
+            /*
             //资源导入的目标文件夹是UI路径
             if (ImportPath.IndexOf(EditorSetting.GetInstance().SettingUI.AssetPathRoot) == 0)
             {
@@ -66,6 +68,7 @@ namespace Editor
                     }
                 }
             }
+             * */
         }
 
         /**

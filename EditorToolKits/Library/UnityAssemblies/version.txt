@@ -1,0 +1,5 @@
+4.6.0f3:1.9.9.0
+StandaloneWindows
+D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll
+D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/Editor/UnityEditor.UI.dll
+D:/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll

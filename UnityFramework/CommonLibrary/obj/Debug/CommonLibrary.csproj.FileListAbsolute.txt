@@ -7,3 +7,8 @@ D:\WeiyunSync\UnityPrj\UnityFramework\CommonLibrary\obj\Debug\CommonLibrary.pdb
 D:\WeiyunSync\UnityPrj\UnityFramework\CommonLibrary\bin\Debug\CommonLibrary.dll
 D:\WeiyunSync\UnityPrj\UnityFramework\CommonLibrary\bin\Debug\CommonLibrary.pdb
 D:\WeiyunSync\UnityPrj\UnityFramework\CommonLibrary\obj\Debug\CommonLibrary.csprojResolveAssemblyReference.cache
+D:\Github\Unity\UnityFramework\CommonLibrary\obj\Debug\CommonLibrary.dll
+D:\Github\Unity\UnityFramework\CommonLibrary\obj\Debug\CommonLibrary.pdb
+D:\Github\Unity\UnityFramework\CommonLibrary\bin\Debug\CommonLibrary.dll
+D:\Github\Unity\UnityFramework\CommonLibrary\bin\Debug\CommonLibrary.pdb
+D:\Github\Unity\UnityFramework\CommonLibrary\bin\Debug\UnityEngine.dll
