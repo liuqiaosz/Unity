@@ -35,11 +35,17 @@ namespace FrameworkTest
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			HTTPNetwork.Instance.Get("http://www.163.com", "GET", (NetworkStatusEnum Status, System.Object Data) =>
+			HTTPNetwork.Instance.Get("http://www.163.com1", "GET", (NetworkStatusEnum Status, System.Object Data) =>
 			{
-				string V = System.Text.Encoding.Default.GetString((byte[])Data);
-
-				Console.WriteLine(V);
+                if (Data is byte[])
+                {
+                    string V = System.Text.Encoding.Default.GetString((byte[])Data);
+                    Console.WriteLine(V);
+                }
+                else
+                {
+                    Console.WriteLine(Data);
+                }
 			});
 		}
 

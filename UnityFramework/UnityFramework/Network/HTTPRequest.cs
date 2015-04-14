@@ -43,6 +43,8 @@ namespace UnityFramework.Network
 			if (!string.IsNullOrEmpty(Url))
 			{
 				Http = (HttpWebRequest)WebRequest.Create(Url);
+                Http.KeepAlive = false;
+                Http.Timeout = 1;
 				if(string.IsNullOrEmpty(Method))
 				{
 					Method = "POST";
@@ -58,23 +60,40 @@ namespace UnityFramework.Network
 			HttpWebRequest Request = Ar.AsyncState as HttpWebRequest;
 			if (null != Request)
 			{
-				HttpWebResponse Response = (HttpWebResponse)Request.EndGetResponse(Ar);
-				if (Response.StatusCode != HttpStatusCode.OK)
-				{
-					Response.Close();
-					if (null != OnResp)
-					{
-						ResponseData = Response.StatusDescription;
-						OnResp(Response.StatusCode, this);
-					}
-				}
-				else
-				{
-					Stream Reader = Response.GetResponseStream();
-					//int Size = Reader.EndRead(Ar);
-					ByteBuffer = new byte[4096];
-					Reader.BeginRead(ByteBuffer, 0, ByteBuffer.Length, new AsyncCallback(ReponseReadCallback), Reader);
-				}
+                HttpWebResponse Response = null;
+                try
+                {
+                    Response = (HttpWebResponse)Request.EndGetResponse(Ar);
+                    if (Response.StatusCode != HttpStatusCode.OK)
+                    {
+                        Response.Close();
+                        if (null != OnResp)
+                        {
+                            ResponseData = Response.StatusDescription;
+                            OnResp(Response.StatusCode, this);
+                        }
+                    }
+                    else
+                    {
+                        Stream Reader = Response.GetResponseStream();
+                        //int Size = Reader.EndRead(Ar);
+                        ByteBuffer = new byte[4096];
+                        Reader.BeginRead(ByteBuffer, 0, ByteBuffer.Length, new AsyncCallback(ReponseReadCallback), Reader);
+                    }
+                }
+                catch (WebException ex)
+                {
+                    if (null != Response)
+                    {
+                        Response.Close();
+                    }
+                    if (null != OnResp)
+                    {
+                        ResponseData = ex.Message ;
+                        OnResp(HttpStatusCode.RequestTimeout, this);
+                    }
+                }
+				
 			}
 		}
 
