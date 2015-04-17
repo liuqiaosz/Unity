@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using System.Text;
 using System.Net;
 using System.IO;
@@ -35,7 +34,6 @@ namespace UnityFramework.Network
 			this.Method = Method;
 			this.Data = Data;
 			this.OnResp = OnResp;
-			
 		}
 
 		public void Request()

@@ -5,6 +5,7 @@ using System.Text;
 using System.Net;
 using CommonLibrary;
 using UnityFramework.Misc.Pool;
+using UnityFramework.Engine.Mgr;
 namespace UnityFramework.Network
 {
 	public class HTTPNetwork : Singlton<HTTPNetwork>
@@ -109,6 +110,36 @@ namespace UnityFramework.Network
 			CurrentRequest = null;
 			ObjectPool.Instance.ReturnObject<HTTPRequest>(Request);
 			BeginWork();
+		}
+
+		private string heartbeatUrl = "";
+		private bool isHeartbeatActive = false;
+		/// <summary>
+		/// 开启心跳
+		/// </summary>
+		/// <param name="delay">Delay.</param>
+		public void ActvieHeartbaet(int delay,string url)
+		{
+			if (!isHeartbeatActive) 
+			{
+				heartbeatUrl = url;
+				TimerManager.Instance.AddTimer(delay,(int count)=>{
+					HTTPRequest Request = ObjectPool.Instance.GetObjectInstance<HTTPRequest>();
+					if (null == Request)
+					{
+						//从对象池获取对象失败,异常
+						return NetworkStatusEnum.ERROR;
+					}
+					
+					Request.Url = heartbeatUrl;
+					Request.Method = "GET";
+					Request.OnResp = ActionResponse;
+					Request.OnCallback = ()=>{
+
+
+					};
+				},-1);
+			}
 		}
 
 		public void Dispose()
