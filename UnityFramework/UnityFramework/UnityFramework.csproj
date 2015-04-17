@@ -10,7 +10,6 @@
     <RootNamespace>UnityFramework</RootNamespace>
     <AssemblyName>UnityFramework</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -32,22 +31,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.XML" />
     <Reference Include="Unity.SerializationLogic">
-      <HintPath>..\..\..\..\..\Unity\Editor\Data\Managed\Unity.SerializationLogic.dll</HintPath>
+      <HintPath>..\..\..\..\Unity\Editor\Data\Managed\Unity.SerializationLogic.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>..\..\..\..\..\Unity\Editor\Data\Managed\UnityEditor.dll</HintPath>
+      <HintPath>..\..\..\..\Unity\Editor\Data\Managed\UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Graphs">
-      <HintPath>..\..\..\..\..\Unity\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+      <HintPath>..\..\..\..\Unity\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\..\Unity\Editor\Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\Unity\Editor\Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Engine\Core\UnityFramework.cs" />
     <Compile Include="Engine\Scene\Scene.cs" />
     <Compile Include="Engine\Mgr\SceneManager.cs" />
     <Compile Include="Engine\Mgr\UIManager.cs" />
@@ -67,6 +65,10 @@
     <Compile Include="Network\TcpNetwork.cs" />
     <Compile Include="Utils\LzmaTools.cs" />
     <Compile Include="Misc\Pool\ObjectPool.cs" />
+    <Compile Include="Engine\Core\FrameworkDemon.cs" />
+    <Compile Include="Engine\Core\Framework.cs" />
+    <Compile Include="Engine\Mgr\TimerManager.cs" />
+    <Compile Include="Engine\Core\IFrameworkUpdator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -74,7 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj">
-      <Project>{621bb30f-a048-4c14-bbec-7fe8773e24b6}</Project>
+      <Project>{621BB30F-A048-4C14-BBEC-7FE8773E24B6}</Project>
       <Name>CommonLibrary</Name>
     </ProjectReference>
   </ItemGroup>

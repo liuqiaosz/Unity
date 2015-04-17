@@ -19,7 +19,7 @@ namespace UnityFramework.Network
  			 base.Initializer();
 			 WaitQueue = new Queue<HTTPRequest>();
 			 //Cache = new Dictionary<HTTPRequest, Action<NetworkStatusEnum, Object>>();
-			 ObjectPool.Instance.CreateObjectPool<HTTPRequest>();
+			ObjectPool.Instance.CreateObjectPool<HTTPRequest>(ObjectPool.CAPACITY);
 		}
 
 		public NetworkStatusEnum Post(string Url, string Data, Action<NetworkStatusEnum, Object> OnResponse)

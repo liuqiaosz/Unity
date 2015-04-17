@@ -13,7 +13,7 @@ namespace UnityFramework.Misc.Pool
      **/
     public class ObjectPool : Singlton<ObjectPool>,IDisposable
     {
-        private const int CAPACITY = 20;
+        public const int CAPACITY = 20;
 
         private Dictionary<Type, int> CapacityDict = null;
         private Dictionary<Type, int> ObjectUsedDict = null;
@@ -36,7 +36,7 @@ namespace UnityFramework.Misc.Pool
             Type Prototype = typeof(T);
             if (!ObjectDict.ContainsKey(Prototype))
             {
-                CreateObjectPool<T>();
+				CreateObjectPool<T>(CAPACITY);
             }
 
             List<Object> Used;
@@ -124,7 +124,7 @@ namespace UnityFramework.Misc.Pool
         /**
          * 创建对象池
          **/
-        public void CreateObjectPool<T>(int CapacitySize = CAPACITY) where T : IPoolable,new()
+        public void CreateObjectPool<T>(int CapacitySize) where T : IPoolable,new()
         {
             Type Prototype = typeof(T);
             if (!ObjectDict.ContainsKey(Prototype))

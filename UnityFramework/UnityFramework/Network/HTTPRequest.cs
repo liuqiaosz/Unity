@@ -44,12 +44,12 @@ namespace UnityFramework.Network
 			{
 				Http = (HttpWebRequest)WebRequest.Create(Url);
                 Http.KeepAlive = false;
-                Http.Timeout = 1;
+                Http.Timeout = 10000;
 				if(string.IsNullOrEmpty(Method))
 				{
 					Method = "POST";
 				}
-				Buffer = new ByteArray();
+				Buffer = new ByteArray(null);
 				Http.Method = Method;
 				Http.BeginGetResponse(new AsyncCallback(GetResponse), Http);
 			}
