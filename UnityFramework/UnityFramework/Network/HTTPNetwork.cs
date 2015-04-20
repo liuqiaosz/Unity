@@ -125,19 +125,14 @@ namespace UnityFramework.Network
 				heartbeatUrl = url;
 				TimerManager.Instance.AddTimer(delay,(int count)=>{
 					HTTPRequest Request = ObjectPool.Instance.GetObjectInstance<HTTPRequest>();
-					if (null == Request)
+					if (null != Request)
 					{
-						//从对象池获取对象失败,异常
-						return NetworkStatusEnum.ERROR;
+						Request.Url = heartbeatUrl;
+						Request.Method = "GET";
+						Request.OnResp = ActionResponse;
+						Request.OnCallback = (NetworkStatusEnum resp,Object obj)=>{
+						};
 					}
-					
-					Request.Url = heartbeatUrl;
-					Request.Method = "GET";
-					Request.OnResp = ActionResponse;
-					Request.OnCallback = ()=>{
-
-
-					};
 				},-1);
 			}
 		}

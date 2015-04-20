@@ -11,6 +11,8 @@ namespace UnityFramework.Engine.Mgr
      **/
     public class SceneManager : Singlton<SceneManager>
 	{
+		private IScene currentScene;
+
 		private SceneManager()
 		{
 		}
@@ -23,6 +25,23 @@ namespace UnityFramework.Engine.Mgr
 		public void SetupConfig(string FilePath)
 		{
 
+		}
+
+		/// <summary>
+		/// 变更场景
+		/// </summary>
+		/// <param name="scene">Scene.</param>
+		public void ChangeScene(IScene scene)
+		{
+			if (null != scene) 
+			{
+				if(null != currentScene)
+				{
+					currentScene.OnDeactive();
+				}
+				currentScene = scene;
+				currentScene.OnActive();
+			}
 		}
     }
 }

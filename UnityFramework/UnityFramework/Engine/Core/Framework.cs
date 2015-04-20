@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityFramework.Notification;
 using UnityFramework.Engine.Mgr;
+using UnityFramework.Utils;
 
 namespace UnityFramework.Engine.Core
 {
@@ -22,7 +23,7 @@ namespace UnityFramework.Engine.Core
 			get;
 		}
 
-		public IFrameworkUpdator RegisterActor<T>()
+		public IFrameworkUpdator RegisterActor<T>() where T:IFrameworkUpdator
 		{
 			try
 			{
@@ -47,6 +48,8 @@ namespace UnityFramework.Engine.Core
 			updator = new List<IFrameworkUpdator> ();
 			NotificationManager.Instance.Startup ();
 			TimerManager.Instance.Startup ();
+
+			Logger.Debug ("Framework is startup");
 		}
 		
 		void Update(float delta)
@@ -60,7 +63,5 @@ namespace UnityFramework.Engine.Core
 				actor.FixedUpdate(time);
 			}
 		}
-
-
 	}
 }
